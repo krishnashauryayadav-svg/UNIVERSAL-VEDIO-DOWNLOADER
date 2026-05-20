@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhai Ka Downloader | Ultra Pro</title>
+    <style>
+        /* Dark Theme & Cool Look */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f 0%, #121212 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 90%;
+            max-width: 450px;
+        }
+        h1 { margin-bottom: 25px; font-size: 2rem; color: #00d2ff; }
+        p { color: #aaa; margin-bottom: 30px; }
+        
+        /* Input Box Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+            border: 1px solid #333;
+        }
+        input[type="text"]:focus { border-color: #00d2ff; }
+
+        /* Button with Animation */
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
+        }
+        
+        /* Success/Error Messages */
+        .msg {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .success { color: #2ecc71; }
+        .error { color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Saver Pro</h1>
+        <p>Bhai, bas link dalo aur magic dekho!</p>
+        
+        <form action="/download" method="post">
+            <input type="text" name="video_url" placeholder="Video URL yahan paste karein..." required>
+            <button type="submit">Download Video</button>
+        </form>
+
+        {% if msg %}
+            <div class="msg {% if 'Error' in msg %}error{% else %}success{% endif %}">
+                {{ msg }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
