@@ -16,10 +16,10 @@ Ise apne local machine par chalane ke liye niche diye gaye steps follow karein:
 
 1. **Repository ko Clone karein:**
    ```bash
-   git clone https://github.com
-   cd krishnashauryayadav-svg
+   git clone https://github.com/krishnashauryayadav-svg/UNIVERSAL-VEDIO-DOWNLOADER
+   cd UNIVERSAL-VEDIO-DOWNLOADER
 2. **Dependencies Install karein:
-    '''bash
+    ```bash
     pip install -r requirements.txt
 3. **App ko run kare:
     ''' bash
